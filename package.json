@@ -1,21 +1,26 @@
+
 {
   "name": "git-hooks-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint":"eslint src/**"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
     "husky": "^4.3.8",
     "jest": "^27.4.5"
   },
-  "husky" : {
-    "hooks":{
-      "pre-commit":"npm test"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
     }
   }
 }
